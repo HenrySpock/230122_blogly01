@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="shortcut icon" type="image/x-icon" href="static/favicon.ico">
+    <title>{% block title %}Blogly{% endblock %}</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="{{ url_for('home') }}">Home</a></li>
+                <li><a href="{{ url_for('list_users') }}">Users</a></li>
+                <li><a href="{{ url_for('new_user') }}">New User</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h1>{% block content_title %}{% endblock %}</h1>
+        {% block content %}{% endblock %}
+    </main>
+
+</body>
+</html>

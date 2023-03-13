@@ -1,0 +1,24 @@
+{% extends 'base.html' %}
+
+{% block title %}
+    User Details: {{ user.first_name }} {{ user.last_name }}
+{% endblock %}
+
+{% block content %}
+    <h1>User Details: {{ user.first_name }} {{ user.last_name }}</h1>
+    <dl> 
+        <dt>First Name:</dt><dd>{{ user.first_name }}</dd>
+        <dt>Middle Name:</dt><dd>{{ user.middle_name }}</dd>
+        <dt>Last Name:</dt><dd>{{ user.last_name }}</dd>
+        <div class="portrait">
+            <dt><img src="{{ user.image_url }}" class="user-port"></dt>
+        </div>
+    </dl>
+    <button>
+        <a href="{{ url_for('edit_user', user_id=user.id) }}">Edit</a>
+    </button>
+    <form action="{{ url_for('delete_user', user_id=user.id) }}" method="post">
+        <input type="hidden" name="_method" value="DELETE">
+        <button type="submit">Delete</button>
+    </form>
+{% endblock %}

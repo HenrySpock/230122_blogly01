@@ -1,0 +1,31 @@
+.user-img {
+    max-height: 100px;
+  }
+
+  .img-wrapper {
+    width: 75px; /* or whatever width you want to use */
+    height: 100px; /* or whatever height you want to use */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .portrait {
+    width: 150px; /* or whatever width you want to use */
+    height: 200px; /* or whatever height you want to use */
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .user-img img {
+    height: 100%;
+    width: auto;
+  }
+
+  .user-port {
+    max-height: 200px;
+    width: auto;
+  }
